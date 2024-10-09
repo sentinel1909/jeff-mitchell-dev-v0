@@ -1,0 +1,49 @@
+{% extends "base.html" %} {% block title %}Articles | jeff-mitchell-dev{%
+endblock %} {% block content %}
+<section>
+  <h2>Filter by:</h2>
+  <fieldset>
+    <form action="/articles_category" method="get">
+      <label for="category">Category:</label>
+      <select name="category" id="category">
+        <option value="-">-</option>
+        <option value="devops">devops</option>
+        <option value="programming languages">programming languages</option>
+        <option value="programming projects">programming projects</option>
+        <option value="web development">web development</option>
+        <option value="backend web frameworks">backend web frameworks</option>
+        <option value="frontend web frameworks">frontend web frameworks</option>
+      </select>
+      <input type="submit" value="Submit" />
+    </form>
+    <br />
+    <form action="/articles_tag" method="get">
+      <label for="tag">Tag:</label>
+      <select name="tag" id="tag">
+        <option value="-">-</option>
+        <option value="actix web">actix web</option>
+        <option value="css frameworks">css frameworks</option>
+        <option value="golang">golang</option>
+        <option value="middleware">middleware</option>
+        <option value="rust">rust</option>
+        <option value="yew">yew</option>
+      </select>
+      <input type="submit" value="Submit" />
+    </form>
+  </fieldset>
+</section>
+<section class="article-grid">
+  {% for article in articles %}
+  <article class="article-card">
+    <h3>{{ article.title }}</h3>
+    <h4>{{ article.date }}</h4>
+    <p>Category: {{ article.category }}</p>
+    <p>Tag: {{ article.tag }}</p>
+    <p>Summary: {{ article.summary }}</p>
+    <a href="/article/{{ article.date }}/{{ article.slug }}"
+      >Do you want to know more?</a
+    >
+  </article>
+  {% endfor %}
+</section>
+{% endblock %}

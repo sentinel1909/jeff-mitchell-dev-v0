@@ -1,0 +1,10 @@
+{% extends "base.html" %} {% block title %}Music | jeff-mitchell-dev{% endblock
+%} {% block content %}
+<div
+  hx-get="{{ api_url }}"
+  hx-target="#music-diary"
+  hx-trigger="load"
+  hx-swap="innerHTML"
+></div>
+<section class="article-grid" id="music-diary">Loading...</section>
+{% endblock %}

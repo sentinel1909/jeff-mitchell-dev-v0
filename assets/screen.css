@@ -1,0 +1,257 @@
+/* CSS Styles for jeff-mitchell-dev */
+
+/* CSS variable declarations */
+:root {
+  --site-main-font: Arial, sans-serif;
+  --site-dimensions-height: 100%;
+  --site-dimensions-margin: 0;
+  --site-link-colour: hsl(0, 0%, 100%);
+  --header-background-color: hsl(0, 0%, 20%);
+  --header-text-colour: hsl(0, 0%, 100%);
+  --nav-text-colour: hsl(0, 0%, 100%);
+  --content-background-color: hsl(0, 0%, 100%);
+  --content-main-text-color: hsl(0, 0%, 0%);
+  --article-card-border: hsl(0, 0%, 0%);
+  --article-card-background: hsl(0, 0%, 95.69%);
+  --article-container-color: hsl(0, 0%, 95.69%);
+  --footer-background-color: hsl(0, 0%, 20%);
+  --footer-text-colour: hsl(0, 0%, 100%);
+}
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* Main styles */
+body,
+html {
+  height: var(--site-dimensions-height);
+  margin: var(--site-dimensions-margin);
+  font-family: var(--site-main-font);
+}
+
+header {
+  display: flex;
+  background-color: var(--header-background-color);
+  color: var(--header-text-colour);
+  padding: 1em;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hamburger {
+  display: block;
+  cursor: pointer;
+}
+
+.bar {
+  display: none;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  display: flex;
+  flex-grow: 1;
+  max-width: 1024px;
+  margin: 0 auto;
+  justify-content: center;
+  min-height: calc(100vh - (header height + footer height));
+  padding: 0 1.25em;
+  padding-top: 1.25em;
+  padding-bottom: 1.25em;
+  background-color: var(--content-background-color);
+  color: var(--content-main-text-color);
+}
+
+.navbar {
+  background-color: #333;
+  color: var(--nav-text-colour);
+  text-align: center;
+}
+
+.navbarItems {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.navbarItems li {
+  margin: 0 1.25em;
+}
+
+.navbarItems a {
+  color: var(--site-link-colour);
+  text-decoration: none;
+}
+
+.navbarItems a:hover {
+  font-weight: bold;
+}
+
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1.25em;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+.article-card {
+  background-color: var(--article-card-background);
+  border: 2px solid var(--article-card-border);
+  padding: 1.25em;
+}
+
+.article-card h2,
+h3,
+h4 {
+  font-weight: bold;
+}
+
+.article-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.25em;
+  line-height: 1.6;
+  background-color: var(--article-container-color);
+}
+
+.article-container h1,
+.article-container h2,
+.article-container h3 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.article-container p {
+  margin-bottom: 1em;
+}
+
+.article-container pre {
+  padding: 1.25em;
+  border-radius: 0.25em;
+  overflow-x: auto;
+}
+
+footer {
+  background-color: var(--footer-background-color);
+  color: var(--footer-text-colour);
+  text-align: center;
+  padding: 1.25em;
+  bottom: 0;
+  position: relative;
+  width: 100%;
+}
+
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+footer ul li {
+  margin: 0 1rem;
+}
+
+footer a {
+  color: var(--footer-text-colour);
+  text-decoration: none;
+}
+
+footer a:hover {
+  font-weight: bold;
+}
+
+/* media queries */
+@media (max-width: 760px) {
+  .bar {
+    display: block;
+  }
+
+  .navbarItems {
+    display: none;
+  }
+
+  .navbarItems.active {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbarItems li {
+    margin: 0.5rem 0;
+  }
+
+  .article-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .article-container {
+    max-width: 100%;
+  }
+
+  .article-container pre {
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-x: auto;
+  }
+}

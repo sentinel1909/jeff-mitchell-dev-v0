@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/assets/screen.css"
+      media="screen"
+    />
+    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+    <title>{% block title %}jeff-mitchell-dev{% endblock %}</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <h1>jeff-mitchell-dev</h1>
+        <img
+          src="/assets/jeff-mitchell-dev-logo.png"
+          alt="jeff-mitchell-dev logo"
+        />
+      </header>
+      <nav class="navbar">
+        <ul class="navbarItems">
+          <li><a href="/">Home</a></li>
+          <li><a href="/articles">Articles</a></li>
+          <li><a href="/music">Music</a></li>
+          <li><a href="/games">Games</a></li>
+          <li><a href="/photography">Photography</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </nav>
+      <main>{% block content %}{% endblock %}</main>
+      <footer>
+        <section>
+          <p>&copy; Jeffery D. Mitchell</p>
+        </section>
+        <section>
+          <ul>
+            <li>
+              <a
+                href="https://github.com/sentinel1909"
+                target="_blank"
+                rel="noreferrer"
+                >GitHub</a
+              >
+            </li>
+          </ul>
+        </section>
+        <section>
+          <p>
+            This site exists because of Dutch kindness, the trail blazers at
+            <a href="https://shuttle.rs" target="_blank" rel="noreferrer"
+              >Shuttle</a
+            >, and
+            <a href="https://taniarascia.com" target="_blank" rel="noreferrer"
+              >Tania Rascia.</a
+            >
+          </p>
+          <p>
+            Built with
+            <a href="https://rust-lang.org" target="_blank" rel="noreferrer"
+              >Rust</a
+            >, vanilla web tech, and
+            <a href="https://htmx.org" target="_blank" rel="noreferrer"
+              >HTMX.</a
+            >
+          </p>
+        </section>
+      </footer>
+    </div>
+    <script src="/assets/htmx.min.js"></script>
+    <script src="/assets/scripts.js"></script>
+    <!-- Default Statcounter code for Jeff Mitchell's Dev Profile
+    https://jeff-mitchell.dev -->
+    <script type="text/javascript">
+      var sc_project = 12998345;
+      var sc_invisible = 1;
+      var sc_security = "e1ec8377";
+    </script>
+    <script
+      type="text/javascript"
+      src="https://www.statcounter.com/counter/counter.js"
+      async
+    ></script>
+    <noscript
+      ><div class="statcounter">
+        <a title="Web Analytics" href="https://statcounter.com/" target="_blank"
+          ><img
+            class="statcounter"
+            src="https://c.statcounter.com/12998345/0/e1ec8377/1/"
+            alt="Web Analytics"
+            referrerpolicy="no-referrer-when-downgrade"
+        /></a></div
+    ></noscript>
+    <!-- End of Statcounter Code -->
+  </body>
+</html>
